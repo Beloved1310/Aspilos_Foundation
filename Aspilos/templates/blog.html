@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Font Awesome -->
+    <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href=" {% static '../static/css/style.css' %} ">
+  <link rel="stylesheet" href=" {% static '../static/css/bootstrap.min.css' %} ">
+  <link rel="stylesheet" href=" {% static 'contact_us.html' %} ">
+
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href=" {% static '../static/css/mdb.min.css' %} ">
+
+  <link rel="stylesheet" href=" {% static '../static/css/bootstrap.css' %} ">
+
+  <!-- jQuery -->
+  <script type="text/javascript" src=" {% static '../static/js/jquery.min.js' %} "></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src=" {% static '../static/js/popper.min.js' %} "></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src=" {% static '../static/js/bootstrap.min.js' %} "></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src=" {% static '../static/js/mdb.min.js' %} "></script>
+  <script src=" {% static '../static/js/bootstrap.js' %} "></script>
+
+<title>Aspilos Project</title>
+</head>
+<body>
+    <!--Header-->
+  <!--Navbar -->
+ <nav class="mb-1 navbar navbar-expand-lg navbar-dark">
+ <a class="navbar-brand" href=" {% url 'index' %} ">
+  <img src=" {% static '../static/image/cropped-aspilos-logo-3-1-removebg-preview.png' %} "></a>
+ <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+ aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+ </button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+  <ul class="navbar-nav ml-auto">
+  <li class="nav-item active">
+  <a class="nav-link" href=" {% url 'index' %} "style="color: #000000">Home</a>
+  <span class="sr-only">(current)</span>
+  </a>
+  </li>
+  <li class="nav-item">
+  <a class="nav-link" href=" {% url 'about' %} "style="color: #000000">About</a>
+  </li>
+  <li class="nav-item">
+  <a class="nav-link" href=" {% url 'projects' %} " style="color: #000000"> Project</a>
+  </li>
+  <li class="nav-item">
+  <a class="nav-link" href=" {% url 'blog' %} "style="color: #000000">Blog</a>
+  </li>
+  <li class="nav-item">
+  <a class="nav-link" href=" {% url 'contact' %} "style="color: #000000">Contact</a>
+  </li>
+  </ul>
+  <form class="d">
+  <button type="button" class="btn btn-#d606b3 btn-rounded1" style="border-radius: 10px; background-color:#d606b3 ; font-weight: bold; color: #ffffff;">Donate</button>
+   </form>
+</div>
+</nav>
+<!--/.Navbar -->
+
+<div class="container">
+    <div class="row justify-content-center pt-3">
+        <div class="col-lg-12">
+            <h3 class="text-center mt-4">BLOG</h3>
+            <div class="just inner mb-2"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+                    <img src=" {% static '../static/image/v76_14.png' %} " class="img-fluid mt-4" style="width: 70%;">
+                    <div class="col-sm-4" style="padding:20px; margin-left: 6px; margin-right: 6px; border:1px solid #ff9100; background-color: #ff9100; margin-left: 20px; margin-top: -70px; margin-bottom: 100px; ">
+                        <h4 style="color: white; font-weight: bold; text-align: center;">{% now "jS F" %}</h4>
+                    </div>
+            </div>
+        
+            <div class="col-lg-6 mt-4">
+                <form action="{% url 'blog' %}" method="get">
+        
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="form-group">
+                                <input type="text" name="q" placeholder="Search" class="form-control"
+                            required="">
+                            </div> 
+                        </div>
+                    </div>
+                </form>
+                    <form method = "POST" action= "{% url 'blog' %}">
+                        {% csrf_token %}
+    
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="form-group">
+                                <input type="text" name="subject" placeholder="Subject" class="form-control"
+                            required="">
+                            </div> 
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="form-group">
+                                <textarea class="form-control mt-2"  rows="7"  name = "message" placeholder="Enter message"></textarea>
+                            </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group mt-3">
+                                    <input type="text" name="name" placeholder="Name" class="form-control"
+                                required="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group mt-3">
+                                    <input type="email" name="email" placeholder="Email" class="form-control"
+                              required="">
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="row">
+                            <div class="col-lg-4">
+                              <button type="submit" class="btn btn-orange btn-rounded mb-4">SEND</button>
+                            </div>
+                        </div>
+                        </div>
+            
+                    </div>
+                </form>
+            </div>
+        </div>
+    <div class="row">
+        <div class="col-lg-6 mt-2">
+            <p style="font-family: Verdana, Geneva, Tahoma, sans-serif;"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+    molestias. Fugiat pariatur maxime quis culpa corporis vitae.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+    molestias. Fugiat pariatur maxime quis culpa corporis vitae.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+    molestias. Fugiat pariatur maxime quis culpa corporis vitae.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+    molestias. Fugiat pariatur maxime quis culpa corporis vitae.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis</p>
+    <img src=" {% static '../static/image/IMG-20201208-WA0017.jpg' %} " class="img-fluid mt-4" style="width: 70%;">
+    <div class="col-sm-4" style="padding:20px; margin-left: 6px; margin-right: 6px; border:1px solid #ff9100; background-color: #ff9100; margin-left: 20px; margin-top: -70px; margin-bottom: 100px; ">
+        <h4 style="color: white; font-weight: bold; text-align: center;"> {% now "jS F Y " %} </h4>
+        </div>
+        </div>
+    <div class="col-lg-6 mt-2">
+        <div>
+            <h4 style="font-weight: bold;" class="mb-4" >Recent Post</h4>
+        </div>
+        <div style="padding: 50px; background-color: #ebe5e5f5;">
+           <div class="row">
+               <div class="col-lg-6">
+                <img src=" {% static '../static/image/IMG-20201208-WA0017.jpg' %} " class="img-fluid">
+               </div>
+            
+
+    <div class="col-lg-6">
+        {% for post in object_list %}
+        <p style="text-align: center; font-size: x-small; font-family: Verdana, Geneva, Tahoma, sans-serif ;"> 
+          {{ post.subject}}   <br</p>
+        <p style="font-weight: bold; font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: center; font-size: x-small;">
+          {{ post.created_at }}
+        </p>
+       {% endfor %} 
+      </div>
+
+    </div>
+      
+ </div>
+ </div>
+</div>
+
+
+   
+<div class="row mt-4">
+ <div class="col-lg-12">
+   <h3 class="mt-1">PAST EVENTS </h3>
+   <div class="just mb-2"></div>
+ </div>
+</div>
+
+<div class="row">
+ <div class="col-lg-10">
+   <p class="text mt-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
+     tempora quibusdam tempore pariatur dolores voluptate odit vitae autem. Molestiae sapiente dolores fugit illo
+     dolorum ullam,
+     voluptatibus eius debitis voluptatem facere Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+     Voluptate nostrum molestias enim dolorem quisquam tenetur perferendis eius placeat quia, illum qui modi
+     architecto maxime earum,
+     incidunt debitis, quasi officiis repellat.</p>
+   <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos tempora
+     quibusdam tempore pariatur dolores voluptate odit vitae autem. Molestiae sapiente dolores fugit illo dolorum
+     ullam,
+     voluptatibus eius debitis voluptatem facere Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+     Voluptate nostrum molestias enim dolorem quisquam tenetur perferendis eius placeat quia, illum qui modi
+     architecto maxime earum,
+     incidunt debitis, quasi officiis repellat.</p>
+ </div>
+</div>
+
+<div class="row justify-content-center pt-3">
+ <div class="col-lg-12">
+     <h3 class="text-center mt-4">Posts</h3>
+ </div>
+</div>
+
+{% for post in posts %}
+{{ post.subject }}
+
+{% endfor %}    
+<div class=" justify-content-center pt-4">
+    {% for post in object_list %}
+    <p>{{ post.subject }}</p>
+    <p>{{ post.message}}  </p>
+    <p>{{ post.name}}  </p>
+    <p>{{ post.created_at }}  </p>
+    {% endfor %} 
+    
+</div>
+
+<div class="row d-flex justify-content-center pt-3 mb-4">
+ 
+ 
+</div>
+
+</div>
+
+<div class="fixed bottom">
+</div>
+<footer class="bg-dark text-white text-center text-lg-start fixed bottom">
+<!-- Grid container -->
+<div class="container p-4">
+
+<!--Grid row-->
+<div class="row">
+<!--Grid column-->
+<div class="col-lg-6 col-md-12 mb-4 mb-md-0" style="margin-top: 30px;">
+<h6 class="text-uppercase">Aspilos foundation</h6>
+
+<p style="text-align: justify; font-size: small; padding: 20px; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+molestias. Fugiat pariatur maxime quis culpa corporis vitae.
+</p>
+
+<!-- Facebook -->
+<a class="btn btn-white" style="background-color: #3b5998" href=" https://facebook.com/AspilosFoundation" role="button" 
+><i class="fab fa-facebook-f"></i
+></a>
+
+<!-- Twitter -->
+<a class="btn btn-white" style="background-color: #55acee" href=" https://twitter.com/AspilosFdn " role="button"
+><i class="fab fa-twitter"></i
+></a>
+
+<!-- Instagram -->
+<a class="btn btn-white" style="background-color: #ac2bac" href="https://www.instagram.com/AspilosFoundation/" role="button"
+><i class="fab fa-instagram"></i
+></a>
+<form class="">
+<button type="button" class="btn btn-orange btn-rounded">DONATE NOW</button>
+</form>
+</div>
+
+<!--Grid column-->
+
+<!--Grid column-->
+<div class="col-lg-3 col-md-6 mb-4 mb-md-0" style="margin-top: -30px;">
+<h6 class="text-uppercase" style="padding: 20px;">QUICK LINKS</h6>
+
+<ul class="list-unstyled mb-0">
+<li>
+<a href=" {% url 'index' %} " class="text-white" style="padding: 20px; font-size: small; font-weight: bold;">Home</a>
+</li>
+<br>
+<li>
+<a href=" {% url 'about' %} " class="text-white" style="padding: 20px; font-size: small; font-weight: bold;" >About</a>
+</li>
+<br>
+<li>
+<a href=" {% url 'projects' %} " class="text-white" style="padding: 20px;font-size: small; font-weight: bold;">Project</a>
+</li>
+<br>
+<li>
+<a href=" {% url 'blog' %} " class="text-white" style="padding: 20px; font-size: small;font-weight: bold;">Blog</a>
+</li>
+<br>
+<li>
+<a href=" {% url 'contact' %} " class="text-white" style="padding: 20px; font-size: small;font-weight: bold;">Contact</a>
+</li>
+</ul>
+</div>
+<!--Grid column-->
+
+<!--Grid column-->
+<div class="col-lg-3 col-md-6 mb-4 mb-md-0" style="margin-top: -30px;">
+<h6 class="text-uppercase mb-0" style="padding: 20px;">have a question ?</h6>
+
+<ul class="list-unstyled">
+<li>
+<p class="text" style="font-size: small;" id="basic-addon1"><i class="fa fa-home" 
+aria-hidden="true"></i>  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ali</span>
+</li>
+<li>
+<p class="text py-4" style="font-size: small;" id="basic-addon1"><i class="fa fa-phone"
+aria-hidden="true"></i>   123456789</p>
+</li>
+<li>
+<p class="text" style="font-size: small;" id="basic-addon1"><i class="fa fa-envelope"
+aria-hidden="true"></i>  info@aspilos.com</p>
+</li>
+<li>
+</ul>
+</div>
+<!--Grid column-->
+</div>
+<!--Grid row-->
+</div>
+<!-- Grid container -->
+
+<!-- Copyright -->
+<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); padding: 20px; font-size: small;">
+All rights reserved @
+<a class="text-white" href="https://aspilosfoundation.com/" style="font-size: small;">aspilosfoundation.com</a>
+</div>
+<!-- Copyright -->
+</footer>
+</body>
+</html>
+       
+</body>
+</html>
